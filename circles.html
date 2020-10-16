@@ -3,14 +3,31 @@
 
 <head>
 
-    <title>CIRCLES</title>
+	<title>PatataP</title>
+	<link rel="shortcut icon" href="favicon.ico" />
     <script type="text/javascript" src="js/paper-full.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <link rel="stylesheet" href="circles.css">
-    <!-- Define inlined PaperScript associate it with myCanvas -->
-    <script type="text/paperscript" canvas="myCanvas">
-        
-        var data = {
+	<!-- Define inlined PaperScript associate it with myCanvas -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+	<script type="text/paperscript" canvas="myCanvas">
+	
+	$(window).on('load',function(){
+		$('#exampleModal').modal('show');
+			
+		setTimeout(function(){
+			$('#exampleModal').modal('hide')
+		}, 4000);
+	});
+
+	setTimeout(function(){
+		$('#Modal').modal('hide')
+	  }, 4000);
+
+	var data = {
 	q: {
 		sound: new Howl({
 			src: ['sounds/bubbles.mp3']
@@ -214,7 +231,28 @@
 </head>
 
 <body>
-    <canvas id="myCanvas" resize></canvas>
+	<canvas id="myCanvas" resize></canvas>
+	
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Welcome to PatataP</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Press any key from A to Z and turn UP the volume
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
 </body>
 
 </html>
